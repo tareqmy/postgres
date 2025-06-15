@@ -1,4 +1,4 @@
-FROM postgres:latest
+FROM postgres:13.21
 LABEL creator="Tareq Mohammad Yousuf"
 LABEL email="tareq.y@gmail.com"
 
