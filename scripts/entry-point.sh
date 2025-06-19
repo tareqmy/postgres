@@ -35,6 +35,7 @@ if [ ! -s "$PGDATA/PG_VERSION" ]; then
     # wait
 else
     echo "▶ Database already initialized. Skipping config update."
+    exec gosu postgres docker-entrypoint.sh "$@"
 fi
 
 
