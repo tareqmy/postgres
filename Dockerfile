@@ -7,13 +7,12 @@ LABEL email="tareq.y@gmail.com"
 RUN apt-get update && apt-get install -y gosu && rm -rf /var/lib/apt/lists/*
 
 COPY ./scripts/*.sh /
+COPY ./scripts/entry-point.sh /docker-entrypoint-initdb.d/init.sh
+RUN chmod +x /docker-entrypoint-initdb.d/init.sh
 COPY .env /
 RUN rm -f /etc/localtime \
     && ln -s /usr/share/zoneinfo/UTC /etc/localtime \
     && chmod +x /entry-point.sh
-
-# Entrypoint script
-ENTRYPOINT ["/entry-point.sh"]
 
 # This will be the argument for entrypoint eg: /entry-point.sh postgres
 CMD ["postgres"]
