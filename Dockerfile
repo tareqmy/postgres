@@ -1,4 +1,4 @@
-ARG TAG="default"
+ARG TAG="latest"
 FROM postgres:${TAG}
 LABEL creator="Tareq Mohammad Yousuf"
 LABEL email="tareq.y@gmail.com"
