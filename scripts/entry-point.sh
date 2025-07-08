@@ -24,6 +24,6 @@ echo "log_disconnections = on"              >> "$CONF_FILE"
 
 
 echo "Restarting PostgreSQL to apply changes..."
-pg_ctl restart -D "$PGDATA" -m fast
+pg_ctl restart -D "$PGDATA"
 
 echo "PostgreSQL restarted with logging_collector enabled."
